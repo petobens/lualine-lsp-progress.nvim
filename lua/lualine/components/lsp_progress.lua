@@ -161,7 +161,7 @@ LspProgress.register_progress = function(self)
     vim.api.nvim_create_autocmd('LspProgress', {
       group = gid,
       callback = function(data)
-        local value = data.data.result.value
+        local value = data.data.params.value
         local msgs = {
           {
             message = value.message,
