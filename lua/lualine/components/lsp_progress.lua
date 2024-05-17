@@ -228,7 +228,7 @@ LspProgress.update_progress = function(self)
 
   local attached = vim.tbl_map(function(c)
     return c.name
-  end, vim.lsp.get_active_clients { bufnr = vim.api.nvim_get_current_buf() })
+  end, vim.lsp.get_clients { bufnr = vim.api.nvim_get_current_buf() })
   for _, client in pairs(self.clients) do
     for _, display_component in pairs(self.options.display_components) do
       local display_client = true
